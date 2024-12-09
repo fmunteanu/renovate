@@ -12,13 +12,16 @@
       "matchStrings": [
         "version:\\s+(?<currentValue>.+)"
       ],
+      "matchStringsStrategy": "recursive",
+      "packageNameTemplate": "VictoriaMetrics/helm-charts"
+    },
+    {
       "fileMatch": [
         "roles/victorialogs/default/main.yaml"
       ],
       "matchStrings": [
         "helm:\\s+chart:[\\s\\S]+?version:\\s+v(?<currentValue>.+)"
-      ],
-      "packageNameTemplate": "VictoriaMetrics/helm-charts"
+      ]
     }
   ],
   "enabledManagers": [

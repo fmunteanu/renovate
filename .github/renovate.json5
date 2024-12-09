@@ -8,7 +8,7 @@
       "extractVersionTemplate": "^victoria-logs-single-(?<version>.+)$",
       "fileMatch": [
         "roles/victorialogs/Chart.yaml",
-        "roles/victorialogs/defaults/main.yaml"
+        "roles/victorialogs/default/main.yaml"
       ],
       "matchStrings": [
         "^version:\\s+(?<currentValue>.+)",

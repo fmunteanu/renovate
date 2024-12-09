@@ -7,7 +7,7 @@
       "depNameTemplate": "VictoriaMetrics/victoria-logs-single",
       "extractVersionTemplate": "^victoria-logs-single-(?<version>.+)$",
       "fileMatch": [
-        "roles\\/victorialogs\\/(Chart|default\\/main).yaml"
+        "roles\\/victorialogs\\/(Chart|default\\/main)\\.yaml"
       ],
       "matchStrings": [
         "^version:\\s+(?<currentValue>.+)",

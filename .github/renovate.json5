@@ -16,6 +16,7 @@
       "packageNameTemplate": "VictoriaMetrics/helm-charts"
     },
     {
+      "datasourceTemplate": "github-releases",
       "fileMatch": [
         "roles/victorialogs/default/main.yaml"
       ],

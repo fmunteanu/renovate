@@ -12,7 +12,7 @@
       ],
       "matchStrings": [
         "^version:\\s+(?<currentValue>.+)/m",
-        "helm:\\s+chart:[\\s\\S]+?version:\\s+v(?<currentValue>.+)/m"
+        "helm:\\s+chart:[\\s\\S]+?version:\\s+v(?<currentValue>.+)"
       ],
       "packageNameTemplate": "VictoriaMetrics/helm-charts"
     }

@@ -27,6 +27,5 @@
     "config:recommended"
   ],
   "prConcurrentLimit": 0,
-  "prHourlyLimit": 0,
-  "separateMajorMinor": false
+  "prHourlyLimit": 0
 }

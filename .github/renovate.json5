@@ -34,12 +34,12 @@
       "customType": "regex",
       "datasourceTemplate": "custom.cilium",
       "depNameTemplate": "cilium/cilium",
-      "extractVersionTemplate": "^v(?<version>.+)$",
+      "extractVersionTemplate": "v(?<version>.+)",
       "fileMatch": [
         "roles/cilium/Chart.yaml"
       ],
       "matchStrings": [
-        "^version:\\s+(?<currentValue>.+)$"
+        "^version:\\s+(?<currentValue>.+)"
       ]
     },
     {

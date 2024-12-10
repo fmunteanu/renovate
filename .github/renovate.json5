@@ -7,6 +7,12 @@
       "transformTemplates": [
         "{\"releases\": [{\"version\": $.lts.full_version}], \"homepage\": \"https://ubuntu.com\", \"sourceUrl\": \"https://github.com/canonical/ubuntu.com\"}"
       ]
+    },
+    "helm": {
+      "defaultRegistryUrlTemplate": "https://helm.baltorepo.com/stable/debian/packages/helm/badge/latest.json",
+      "transformTemplates": [
+        "{\"releases\": [{\"version\": $string(status)}], \"homepage\": \"https://helm.sh\", \"sourceUrl\": \"https://helm.baltorepo.com/stable/debian/packages/helm/\"}"
+      ]
     }
   },
   "customManagers": [
@@ -19,6 +25,17 @@
       ],
       "matchStrings": [
         "version:\\s+(?<currentValue>.+)"
+      ]
+    },
+    {
+      "customType": "regex",
+      "datasourceTemplate": "custom.helm",
+      "depNameTemplate": "debian/helm",
+      "fileMatch": [
+        "roles/helm/Chart.yaml"
+      ],
+      "matchStrings": [
+        "^version:\\s+(?<currentValue>.+)"
       ]
     }
   ],

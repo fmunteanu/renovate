@@ -3,9 +3,9 @@
   "customDatasources": {
     "cluster": {
       "defaultRegistryUrlTemplate": "https://raw.githubusercontent.com/canonical/ubuntu.com/main/releases.yaml",
-      "format": "plain",
+      "format": "yaml",
       "transformTemplates": [
-        "{\"releases\": [{\"version\": $string(lts.full_version)}], \"homepage\": \"https://ubuntu.com\", \"sourceUrl\": \"https://github.com/canonical/ubuntu.com\"}"
+        "{\"releases\": [{\"version\": $.lts.full_version}], \"homepage\": \"https://ubuntu.com\", \"sourceUrl\": \"https://github.com/canonical/ubuntu.com\"}"
       ]
     }
   },

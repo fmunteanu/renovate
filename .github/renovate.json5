@@ -32,7 +32,7 @@
         "roles/cilium/Chart.yaml"
       ],
       "matchStrings": [
-        "^version:\\s+(?<currentValue>.+)"
+        "version:\\s+(?<currentValue>.+)"
       ]
     },
     {
@@ -43,7 +43,7 @@
         "roles/cluster/Chart.yaml"
       ],
       "matchStrings": [
-        "^version:\\s+(?<currentValue>.+)"
+        "version:\\s+(?<currentValue>.+)"
       ]
     },
     {
@@ -54,7 +54,7 @@
         "roles/helm/Chart.yaml"
       ],
       "matchStrings": [
-        "^version:\\s+(?<currentValue>.+)"
+        "version:\\s+(?<currentValue>.+)"
       ]
     }
   ],

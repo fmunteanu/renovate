@@ -7,13 +7,14 @@
       "depNameTemplate": "VictoriaMetrics/victoria-logs-single",
       "extractVersionTemplate": "^victoria-logs-single-(?<version>.+)$",
       "fileMatch": [
-        "roles/victorialogs/Chart.yaml".
+        "roles/victorialogs/Chart.yaml",
         "roles/victorialogs/default/main.yaml"
       ],
       "matchStrings": [
         "^version:\\s+(?<currentValue>.+)",
         "helm:\\s+chart:[\\s\\S]+?version:\\s+v(?<currentValue>.+)"
       ],
+      "matchStringsStrategy": "combined",
       "packageNameTemplate": "VictoriaMetrics/helm-charts"
     }
   ],

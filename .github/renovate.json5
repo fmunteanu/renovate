@@ -5,7 +5,7 @@
       "defaultRegistryUrlTemplate": "https://raw.githubusercontent.com/canonical/ubuntu.com/main/releases.yaml",
       "format": "yaml",
       "transformTemplates": [
-        "{\"releases\": [{\"version\": $$.(lts.full_version)}], \"homepage\": \"https://ubuntu.com\", \"sourceUrl\": \"https://github.com/canonical/ubuntu.com\"}"
+        "{\"releases\": [{\"version\": $string(data.full_version)}], \"homepage\": \"https://ubuntu.com\", \"sourceUrl\": \"https://github.com/canonical/ubuntu.com\"}"
       ]
     }
   },

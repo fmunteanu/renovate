@@ -43,7 +43,7 @@
         "roles/cluster/Chart.yaml"
       ],
       "matchStrings": [
-        "version:\\s+(?<currentValue>.+)"
+        "^version:\\s+(?<currentValue>.+)"
       ]
     },
     {

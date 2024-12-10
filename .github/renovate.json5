@@ -5,7 +5,7 @@
       "defaultRegistryUrlTemplate": "https://raw.githubusercontent.com/canonical/ubuntu.com/main/releases.yaml",
       "format": "yaml",
       "transformTemplates": [
-        "{\"releases\": [{\"version\": $string(data.full_version)}], \"homepage\": \"https://ubuntu.com\", \"sourceUrl\": \"https://github.com/canonical/ubuntu.com\"}"
+        "{\"releases\": [{\"version\": $$.(data).full_version}], \"homepage\": \"https://ubuntu.com\", \"sourceUrl\": \"https://github.com/canonical/ubuntu.com\"}"
       ]
     }
   },
@@ -20,21 +20,6 @@
       "matchStrings": [
         "version:\\s+(?<currentValue>.+)"
       ]
-    },
-    {
-      "customType": "regex",
-      "datasourceTemplate": "github-releases",
-      "depNameTemplate": "VictoriaMetrics/victoria-logs-single",
-      "extractVersionTemplate": "^victoria-logs-single-(?<version>.+)$",
-      "fileMatch": [
-        "roles/victorialogs/Chart.yaml",
-        "roles/victorialogs/default/main.yaml"
-      ],
-      "matchStrings": [
-        "^version:\\s+(?<currentValue>.+)",
-        "helm:\\s+chart:[\\s\\S]+?version:\\s+v(?<currentValue>.+)"
-      ],
-      "packageNameTemplate": "VictoriaMetrics/helm-charts"
     }
   ],
   "enabledManagers": [

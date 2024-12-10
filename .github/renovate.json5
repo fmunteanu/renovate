@@ -9,7 +9,6 @@
       "fileMatch": [
         "roles/victorialogs/Chart.yaml"
       ],
-      "groupName": "victorialogs",
       "matchStrings": [
         "^version:\\s+(?<currentValue>.+)",
       ],
@@ -23,7 +22,6 @@
       "fileMatch": [
         "roles/victorialogs/default/main.yaml"
       ],
-      "groupName": "victorialogs",
       "matchStrings": [
         "helm:\\s+chart:[\\s\\S]+?version:\\s+v(?<currentValue>.+)"
       ],

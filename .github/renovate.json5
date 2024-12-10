@@ -15,6 +15,13 @@
         "{\"releases\": [{\"version\": $.lts.full_version}], \"homepage\": \"https://ubuntu.com\", \"sourceUrl\": \"https://github.com/canonical/ubuntu.com\"}"
       ]
     },
+    "pgbouncer": {
+      "defaultRegistryUrlTemplate": "https://raw.githubusercontent.com/CrunchyData/postgres-operator-examples/main/helm/install/values.yaml",
+      "format": "yaml",
+      "transformTemplates": [
+        "{\"releases\": [{\"version\": $substringAfter($.relatedImages.pgbouncer.image, \":ubi8-\")}], \"homepage\": \"https://www.crunchydata.com\", \"sourceUrl\": \"https://github.com/CrunchyData/postgres-operator-examples\"}"
+      ]
+    },
     "helm": {
       "defaultRegistryUrlTemplate": "https://helm.baltorepo.com/stable/debian/packages/helm/badge/latest.json",
       "transformTemplates": [
@@ -52,6 +59,17 @@
       "depNameTemplate": "debian/helm",
       "fileMatch": [
         "roles/helm/Chart.yaml"
+      ],
+      "matchStrings": [
+        "version:\\s+(?<currentValue>.+)"
+      ]
+    },
+    {
+      "customType": "regex",
+      "datasourceTemplate": "custom.pgbouncer",
+      "depNameTemplate": "CrunchyData/pgbouncer",
+      "fileMatch": [
+        "roles/pgbouncer/Chart.yaml"
       ],
       "matchStrings": [
         "version:\\s+(?<currentValue>.+)"

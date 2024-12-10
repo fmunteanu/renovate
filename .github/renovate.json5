@@ -1,21 +1,40 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "customDatasources": {
+    "cilium": {
+      "defaultRegistryUrlTemplate": "https://raw.githubusercontent.com/cilium/cilium/main/stable.txt",
+      "format": "plain",
+      "transformTemplates": [
+        "{\"releases\": $.releases, \"homepage\": \"https://cilium.io\", \"sourceUrl\": \"https://github.com/cilium/cilium\"}"
+      ]
+    },
     "cluster": {
       "defaultRegistryUrlTemplate": "https://raw.githubusercontent.com/canonical/ubuntu.com/main/releases.yaml",
       "format": "yaml",
       "transformTemplates": [
-        "{\"releases\": [{\"version\": $.lts.full_version}], \"homepage\": \"https://ubuntu.com\", \"sourceUrl\": \"https://github.com/canonical/ubuntu.com\"}"
+        "{\"releases\": [{\"version\": $string(lts.full_version)}], \"homepage\": \"https://ubuntu.com\", \"sourceUrl\": \"https://github.com/canonical/ubuntu.com\"}"
       ]
     },
     "helm": {
       "defaultRegistryUrlTemplate": "https://helm.baltorepo.com/stable/debian/packages/helm/badge/latest.json",
       "transformTemplates": [
-        "{\"releases\": $.releases.status, \"homepage\": \"https://helm.sh\", \"sourceUrl\": \"https://helm.baltorepo.com/stable/debian/packages/helm/\"}"
+        "{\"releases\": [{\"version\": $string(status)}], \"homepage\": \"https://helm.sh\", \"sourceUrl\": \"https://helm.baltorepo.com/stable/debian/packages/helm/\"}"
       ]
     }
   },
   "customManagers": [
+    {
+      "customType": "regex",
+      "datasourceTemplate": "custom.cilium",
+      "depNameTemplate": "cilium/cilium",
+      "extractVersionTemplate": "^v(?<version>.+)$",
+      "fileMatch": [
+        "roles/cilium/Chart.yaml"
+      ],
+      "matchStrings": [
+        "^version:\\s+(?<currentValue>.+)"
+      ]
+    },
     {
       "customType": "regex",
       "datasourceTemplate": "custom.cluster",

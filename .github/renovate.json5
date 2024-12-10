@@ -1,6 +1,26 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "customDatasources": {
+    "cluster": {
+      "defaultRegistryUrlTemplate": "https://raw.githubusercontent.com/canonical/ubuntu.com/main/releases.yaml",
+      "format": "yaml",
+      "transformTemplates": [
+        "{\"releases\": [{\"version\": $$.(lts.full_version)}], \"homepage\": \"https://ubuntu.com\", \"sourceUrl\": \"https://github.com/canonical/ubuntu.com\"}"
+      ]
+    }
+  },
   "customManagers": [
+    {
+      "customType": "regex",
+      "datasourceTemplate": "custom.cluster",
+      "depNameTemplate": "cluster/ubuntu",
+      "fileMatch": [
+        "roles/cluster/Chart.yaml"
+      ],
+      "matchStrings": [
+        "version:\\s+(?<currentValue>.+)"
+      ]
+    },
     {
       "customType": "regex",
       "datasourceTemplate": "github-releases",
@@ -14,7 +34,6 @@
         "^version:\\s+(?<currentValue>.+)",
         "helm:\\s+chart:[\\s\\S]+?version:\\s+v(?<currentValue>.+)"
       ],
-      "matchStringsStrategy": "combination",
       "packageNameTemplate": "VictoriaMetrics/helm-charts"
     }
   ],

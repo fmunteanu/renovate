@@ -39,7 +39,7 @@
         "roles/cilium/Chart.yaml"
       ],
       "matchStrings": [
-        "/^version:\\s+(?<currentValue>.+)/m"
+        "^version:\\s+(?<currentValue>.+)$"
       ]
     },
     {

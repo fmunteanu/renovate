@@ -38,7 +38,7 @@
     {
       "customType": "regex",
       "datasourceTemplate": "custom.cluster",
-      "depNameTemplate": "cluster/ubuntu",
+      "depNameTemplate": "canonical/ubuntu",
       "fileMatch": [
         "roles/cluster/Chart.yaml"
       ],

@@ -7,22 +7,15 @@
       "depNameTemplate": "VictoriaMetrics/victoria-logs-single",
       "extractVersionTemplate": "^victoria-logs-single-(?<version>.+)$",
       "fileMatch": [
-        "roles/victorialogs/Chart.yaml"
-      ],
-      "matchStrings": [
-        "version:\\s+(?<currentValue>.+)"
-      ],
-      "matchStringsStrategy": "recursive",
-      "packageNameTemplate": "VictoriaMetrics/helm-charts"
-    },
-    {
-      "datasourceTemplate": "github-releases",
-      "fileMatch": [
+        "roles/victorialogs/Chart.yaml",
         "roles/victorialogs/default/main.yaml"
       ],
       "matchStrings": [
+        "^version:\\s+(?<currentValue>.+)",
         "helm:\\s+chart:[\\s\\S]+?version:\\s+v(?<currentValue>.+)"
-      ]
+      ],
+      "matchStringsStrategy": "combination",
+      "packageNameTemplate": "VictoriaMetrics/helm-charts"
     }
   ],
   "enabledManagers": [

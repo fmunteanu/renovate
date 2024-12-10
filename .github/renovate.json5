@@ -14,7 +14,6 @@
         "^version:\\s+(?<currentValue>.+)",
         "helm:\\s+chart:[\\s\\S]+?version:\\s+v(?<currentValue>.+)"
       ],
-      "matchStringsStrategy": "recursive",
       "packageNameTemplate": "VictoriaMetrics/helm-charts"
     }
   ],

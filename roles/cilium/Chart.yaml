@@ -1,0 +1,7 @@
+apiVersion: v2
+name: cilium
+type: application
+version: 1.16.3
+appVersion: 1.0.0
+description: Documentation generator for cilium Ansible role
+home: https://github.com/cilium/cilium

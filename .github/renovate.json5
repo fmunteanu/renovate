@@ -12,7 +12,7 @@
       "defaultRegistryUrlTemplate": "https://raw.githubusercontent.com/canonical/ubuntu.com/main/releases.yaml",
       "format": "plain",
       "transformTemplates": [
-        "{\"releases\": [{\"version\": $match($.trim(), lts:[\\s\\S]+full_version)[0]}], \"homepage\": \"https://ubuntu.com\", \"sourceUrl\": \"https://github.com/canonical/ubuntu.com\"}"
+        "{\"releases\": [{\"version\": $match($.trim(), /lts:[\\s\\S]+full_version:\\s+/)[0]}], \"homepage\": \"https://ubuntu.com\", \"sourceUrl\": \"https://github.com/canonical/ubuntu.com\"}"
       ]
     },
     "helm": {

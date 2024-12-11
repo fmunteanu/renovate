@@ -18,7 +18,7 @@
     "helm": {
       "defaultRegistryUrlTemplate": "https://helm.baltorepo.com/stable/debian/packages/helm/badge/latest.json",
       "transformTemplates": [
-        "{\"releases\": [{\"version\": $.status}], \"homepage\": \"https://helm.sh\", \"sourceUrl\": \"https://helm.baltorepo.com/stable/debian/packages/helm/\"}"
+        "{\"releases\": [{\"version\": $string(status)}], \"homepage\": \"https://helm.sh\", \"sourceUrl\": \"https://helm.baltorepo.com/stable/debian/packages/helm/\"}"
       ]
     },
     "pgbouncer": {
@@ -52,8 +52,7 @@
       ],
       "matchStrings": [
         "type:[\\s\\S]+version:\\s+(?<currentValue>.+)"
-      ],
-      "versioningTemplate": "debian"
+      ]
     },
     {
       "customType": "regex",
@@ -65,8 +64,7 @@
       ],
       "matchStrings": [
         "type:[\\s\\S]+version:\\s+(?<currentValue>.+)"
-      ],
-      "versioningTemplate": "helm"
+      ]
     },
     {
       "customType": "regex",

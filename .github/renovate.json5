@@ -52,8 +52,7 @@
       ],
       "matchStrings": [
         "type:[\\s\\S]+version:\\s+(?<currentValue>.+)"
-      ],
-      "versioningTemplate": "debian"
+      ]
     },
     {
       "customType": "regex",
@@ -65,8 +64,7 @@
       ],
       "matchStrings": [
         "type:[\\s\\S]+version:\\s+(?<currentValue>.+)"
-      ],
-      "versioningTemplate": "helm"
+      ]
     },
     {
       "customType": "regex",

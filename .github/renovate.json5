@@ -46,23 +46,27 @@
       "customType": "regex",
       "datasourceTemplate": "custom.cluster",
       "depNameTemplate": "canonical/ubuntu",
+      "extractVersionTemplate": "\"(?<version>.+)\"",
       "fileMatch": [
         "roles/cluster/Chart.yaml"
       ],
       "matchStrings": [
         "version:\\s+(?<currentValue>.+)"
-      ]
+      ],
+      "versioningTemplate": "debian"
     },
     {
       "customType": "regex",
       "datasourceTemplate": "custom.helm",
       "depNameTemplate": "debian/helm",
+      "extractVersionTemplate": "\"(?<version>.+)\"",
       "fileMatch": [
         "roles/helm/Chart.yaml"
       ],
       "matchStrings": [
         "version:\\s+(?<currentValue>.+)"
-      ]
+      ],
+      "versioningTemplate": "helm"
     },
     {
       "customType": "regex",

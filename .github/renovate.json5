@@ -4,7 +4,7 @@
     "helm": {
       "defaultRegistryUrlTemplate": "https://helm.baltorepo.com/stable/debian/packages/helm/badge/latest.json",
       "transformTemplates": [
-        "{\"releases\": [{\"version\": $.status}], \"homepage\": \"https://helm.sh\", \"sourceUrl\": \"https://helm.baltorepo.com/stable/debian/packages/helm/\"}"
+        "{\"releases\": [{\"version\": \"{{status}}\"}], \"homepage\": \"https://helm.sh\", \"sourceUrl\": \"https://helm.baltorepo.com/stable/debian/packages/helm/\"}"
       ]
     }
   },
@@ -13,7 +13,7 @@
       "customType": "regex",
       "datasourceTemplate": "custom.helm",
       "depNameTemplate": "debian/helm",
-      "extractVersionTemplate": "(?<version>.+)",
+      "extractVersionTemplate": "^(?<version>.+)$",
       "fileMatch": [
         "roles/helm/Chart.yaml"
       ],

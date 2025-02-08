@@ -18,7 +18,7 @@
         "roles/helm/Chart.yaml"
       ],
       "matchStrings": [
-        "type:[\\s\\S]+version:\\s+(?<currentValue>.+)"
+        "^version:\\s+(?<currentValue>.+)"
       ]
     }
   ],

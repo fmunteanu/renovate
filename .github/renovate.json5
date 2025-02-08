@@ -13,12 +13,12 @@
       "customType": "regex",
       "datasourceTemplate": "custom.helm",
       "depNameTemplate": "debian/helm",
-      "extractVersionTemplate": "^(?<version>.+)$",
+      "extractVersionTemplate": "(?<version>.+)",
       "fileMatch": [
         "roles/helm/Chart.yaml"
       ],
       "matchStrings": [
-        "^version:\\s+(?<currentValue>.+)"
+        "^version:\\s+(?<currentValue>.+)$"
       ]
     }
   ],
